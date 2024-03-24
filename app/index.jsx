@@ -1,13 +1,28 @@
 import { StyleSheet, Text, View } from 'react-native'
-import SignupScreen from './signup/index.jsx'
 import { Link } from "expo-router"
 import { useFonts } from 'expo-font'
+import {
+    setCustomView,
+    setCustomTextInput,
+    setCustomText,
+    setCustomImage,
+    setCustomTouchableOpacity
+} from 'react-native-global-props'
+
+const customTextProps = {
+    style: {
+        fontFamily: 'Yekan',
+        fontSize: 12,
+    }
+}
 
 const index = () => {
     const [fontLoaded] = useFonts({
         'YekanBold': require('../assets/fonts/YekanBold.ttf'),
         'Yekan': require('../assets/fonts/Yekan.ttf'),
     })
+
+    setCustomText(customTextProps)
 
     if (!fontLoaded) {
         return <Text>Loading...</Text>

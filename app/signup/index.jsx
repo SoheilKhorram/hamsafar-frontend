@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
+import { Link } from 'expo-router'
 import React, { useState } from 'react'
+
 import Input from '../(UI)/Input'
 import Button from '../(UI)/Button'
 
@@ -42,6 +44,12 @@ const SignupScreen = () => {
                     secureTextEntry={!shouldShowPassword}
                     onIconPress={() => setShouldShowPassword(!shouldShowPassword)}
                 />
+                <View style={{ alignSelf: "flex-end" }}>
+                    <Text>
+                        قبلا حساب کاربری داشتی؟
+                        <Link href={"login"} style={{ color: "#6096BA" }}>  وارد شو</Link>
+                    </Text>
+                </View>
             </View>
             <Button onPress={handleSubmitButton}>ثبت نام</Button>
         </View>
