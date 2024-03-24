@@ -1,20 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import { Link } from "expo-router"
 import { useFonts } from 'expo-font'
-import {
-    setCustomView,
-    setCustomTextInput,
-    setCustomText,
-    setCustomImage,
-    setCustomTouchableOpacity
-} from 'react-native-global-props'
-
-const customTextProps = {
-    style: {
-        fontFamily: 'Yekan',
-        fontSize: 12,
-    }
-}
+import { setCustomText } from 'react-native-global-props'
 
 const index = () => {
     const [fontLoaded] = useFonts({
@@ -22,6 +9,13 @@ const index = () => {
         'Yekan': require('../assets/fonts/Yekan.ttf'),
     })
 
+    /* Adding the global props */
+    const customTextProps = {
+        style: {
+            fontFamily: 'Yekan',
+            fontSize: 12,
+        }
+    }
     setCustomText(customTextProps)
 
     if (!fontLoaded) {
